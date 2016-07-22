@@ -6,7 +6,7 @@
 <body>
    
     
-    <form action="test.php" method="post">
+    <form action="index.php" method="post">
         
         <h3>Watchya Want?</h3>
         
