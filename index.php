@@ -79,3 +79,74 @@
                 $cheese = $_POST['cheese'];
                 $bacon = $_POST['bacon'];
                 $guacamole = $_POST['guacamole'];
+        $burger = new Burgers($burgerType, $pickles, $tomato, $onion, $lettuce, $mayo, $mustard, $cheese, $bacon, $guacamole);
+$subtotal= 0;  
+      
+       if($burgerType == "Beef" || $burgerType == "Chicken"){
+           $burgerAmount = 6.75;
+       }else if($burgerType == "Fish"){
+           $burgerAmount = 8.95;
+       }else if($burgerType =="Veggie"){
+           $burgerAmount =4.95;
+       }else{
+           $burgerAmount=0;
+       }
+     
+?>
+    <div class = "burger">
+   <img class="pic" src="image/burgerTop.png">
+    <h3><?php echo $burgerType; ?></h3>
+     <?php   if (isset($_POST['pickles'])){
+   ?> <p>pickles</p> <?php
+} ?>
+ <?php   if (isset($_POST['tomato'])){
+   ?> <p>Tomato</p> <?php
+} ?>
+     <?php   if (isset($_POST['onion'])){
+   ?> <p>Onion</p> <?php
+} ?>
+     <?php   if (isset($_POST['lettuce'])){
+   ?> <p>lettuce</p> <?php
+} ?>
+     <?php   if (isset($_POST['mayo'])){
+   ?> <p>Mayo</p> <?php
+} ?>
+     <?php   if (isset($_POST['mustard'])){
+   ?> <p>Mustard</p> <?php
+} ?>
+     <?php   if (isset($_POST['cheese'])){
+   ?> <p>Cheese (that'll be a buck)</p> <?php
+    $subtotal = $subtotal +1;
+} ?>
+     <?php   if (isset($_POST['bacon'])){
+   ?> <p>Bacon (that'll be a buck)</p> <?php
+    $subtotal = $subtotal +1;
+} ?>
+     <?php   if (isset($_POST['guacamole'])){
+   ?> <p>Guacamole (that'll be a buck) </p> <?php
+    $subtotal = $subtotal +1;
+   
+} 
+        
+        ?>
+       
+<?php  
+$subtotal = $subtotal + $burgerAmount;
+$tax = $subtotal*.096;
+$taxFormatted = number_format($tax, 2);
+$total = $subtotal + $tax; 
+$totalFormatted = number_format($total, 2);
+ ?>
+    <img class= "pic" src= "image/burgerBottom.png">
+  <h3>Now That's a Tasty Burger!</h3>
+</div>
+<p>Subtotal:    $<?php echo $subtotal ?></p>
+<p>Tax:     $<?php echo $taxFormatted; ?></p>
+<p>Total:   $<?php echo $totalFormatted; ?></p>
+ <?php     } ?>
+    </form>
+    
+
+
+</body>
+</HTML>
