@@ -37,7 +37,7 @@
         <p>
        <label><input type="checkbox" name="cheese" value="cheese">Cheese (it's cheddar)</label>
         <label><input type="checkbox" name="bacon" value="bacon">Bacon</label>
-         <label><input type="checkbox" name="Guacamole" value="guacamole">Guacamole</label>
+         <label><input type="checkbox" name="guacamole" value="guacamole">Guacamole</label>
        </p>
         <input class="btn" type=submit value="Let's Make A Burger!" name="submit"/>
             <?php
