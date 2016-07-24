@@ -41,7 +41,10 @@
        </p>
         <input class="btn" type=submit value="Let's Make A Burger!" name="submit"/>
             <?php
-        class Burgers {
+        include 'includes/burger-array.php';
+        
+        
+      /*  class Burger {
             public $burgerType;
             public $pickles;
             public $tomato;
@@ -67,6 +70,7 @@
                 $this->guacamole = $guacamole;
             }
         }
+        */
     
    if(isset($_POST['submit'])){
                 $burgerType = $_POST['burger'];
@@ -79,7 +83,7 @@
                 $cheese = $_POST['cheese'];
                 $bacon = $_POST['bacon'];
                 $guacamole = $_POST['guacamole'];
-        $burger = new Burgers($burgerType, $pickles, $tomato, $onion, $lettuce, $mayo, $mustard, $cheese, $bacon, $guacamole);
+       
 $subtotal= 0;  
       
        if($burgerType == "Beef" || $burgerType == "Chicken"){
