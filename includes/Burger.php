@@ -10,8 +10,9 @@
             public $cheese;
             public $bacon;
             public $guacamole;
+            public $subtotal;
             
-            public function __construct($burgerType, $pickles, $tomato, $onion, $lettuce, $mayo, $mustard, $cheese, $bacon, $guacamole){
+            public function __construct($burgerType, $pickles, $tomato, $onion, $lettuce, $mayo, $mustard, $cheese, $bacon, $guacamole, $subtotal){
                 
                 $this->burgerType = $burgerType;
                 $this->pickles= $pickles;
@@ -23,6 +24,7 @@
                 $this->cheese = $cheese;
                 $this->bacon = $bacon;
                 $this->guacamole = $guacamole;
+                $this->subtotal = $subtotal;
             }
         }
     

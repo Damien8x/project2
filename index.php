@@ -5,7 +5,12 @@
 </head>
 <body>
    
-    
+    <?php 
+    include 'includes/burger-array.php';
+    $another = 1;
+    while($another==1){ 
+        unset($_POST['add']);
+    $i++;?>
     <form action="index.php" method="post">
         
         <h3>Watchya Want?</h3>
@@ -40,37 +45,12 @@
          <label><input type="checkbox" name="guacamole" value="guacamole">Guacamole</label>
        </p>
         <input class="btn" type=submit value="Let's Make A Burger!" name="submit"/>
-            <?php
-        include 'includes/burger-array.php';
-        
-        
-      /*  class Burger {
-            public $burgerType;
-            public $pickles;
-            public $tomato;
-            public $onion;
-            public $lettuce;
-            public $mayo;
-            public $mustard;
-            public $cheese;
-            public $bacon;
-            public $guacamole;
             
-            public function __construct($burgerType, $pickles, $tomato, $onion, $lettuce, $mayo, $mustard, $cheese, $bacon, $guacamole){
-                
-                $this->burgerType = $burgerType;
-                $this->pickles= $pickles;
-                $this->tomato = $tomato;
-                $this->onion = $onion;
-                $this->lettuce = $lettuce;
-                $this->mayo = $mayo;
-                $this->mustard = $mustard;
-                $this->cheese = $cheese;
-                $this->bacon = $bacon;
-                $this->guacamole = $guacamole;
-            }
-        }
-        */
+        
+        <?php
+        
+        
+
     
    if(isset($_POST['submit'])){
                 $burgerType = $_POST['burger'];
@@ -146,8 +126,26 @@ $totalFormatted = number_format($total, 2);
 </div>
 <p>Subtotal:    $<?php echo $subtotal ?></p>
 <p>Tax:     $<?php echo $taxFormatted; ?></p>
-<p>Total:   $<?php echo $totalFormatted; ?></p>
- <?php     } ?>
+<p>Total:   $<?php echo $totalFormatted; 
+    
+    
+    
+    ?></p>
+        
+        <input class="btn" type=submit value="Add Another?" name="add"/>
+ <?php     } 
+        
+        ?>
+         
+        <?php
+        $another = 2;
+        if(isset($_POST['add'])){
+            $another=1;
+        }
+    }
+        
+        ?>
+ 
     </form>
     
 
